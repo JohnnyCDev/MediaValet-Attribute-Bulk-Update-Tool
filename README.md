@@ -16,21 +16,60 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+# 📂 MediaValet Attribute Bulk Update Tool
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+A web-based tool built with **Next.js** and **Tailwind CSS** that lets you **update multiple MediaValet asset attributes at once using an Excel file**. Upload your spreadsheet, fill in the fields you want to update, and process all changes in bulk—no manual editing needed per asset.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🚀 Features
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Bulk update MediaValet asset metadata via Excel upload  
+- Supports partial updates (only filled columns are processed)  
+- Simple two-step workflow: **Upload → Process**  
+- Clean, responsive UI powered by Tailwind CSS  
+- Excel export & validation support  
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 📝 How It Works
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Step 1: Upload Excel File
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Click **Choose File** and select your Excel spreadsheet.  
+- Supported Fields (Excel Column Names):
+
+| Column Name | Required | Description |
+| ----------- | -------- | ----------- |
+| `id`        | ✅       | Asset ID (required) |
+| `Title`     | ❌       | Asset title |
+| `Filename`  | ❌       | File name |
+| `Model Name`| ❌       | Model name |
+| `Model Code`| ❌       | Model code |
+| `AltText`   | ❌       | Alternative text |
+| `Brand`     | ❌       | Brand name |
+| `Description`| ❌      | Asset description |
+| `Asset Type`| ❌       | Type of asset |
+
+💡 *Tip: Only fill in the columns you want to update—leave the rest blank.*
+
+### Step 2: Start Processing
+
+- Click **Start Bulk Update** to process the file.  
+- The system updates all filled attributes for the assets in MediaValet.
+
+---
+
+## 🛠 Tech Stack
+
+- **Next.js** – React framework for server-side rendering and routing  
+- **Tailwind CSS** – Utility-first CSS framework for styling  
+- **Excel Integration** – Read and process Excel files for bulk updates  
+
+---
+
+## 📂 Usage
+
+1. Clone the repository:  
+```bash
+git clone https://github.com/yourusername/mediavalet-bulk-update.git
